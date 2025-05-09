@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>    
+    <meta charset="UTF-8">     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <title>JQUERY EFFECTS</title> 
+    <style>    
+        body { background-color: rgb(166, 234, 225); }         
+        h3 {             
+            font-family: Impact, 'Arial Narrow', sans-serif;            
+            font-size: 100px;     
+            font-weight: bolder; 
+        }       
+        .center {             
+            display: block;    
+            margin-left: auto;    
+            margin-right: auto;         
+        }         
+        .text-center,button
+        {
+            font-size: 70px; 
+            text-align : center;
+            justify-content: center;
+
+        }
+      
+        .row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .col-sm-4 {
+            flex: 0 0 30%; 
+            text-align: center;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        #panel {
+            display: none;
+        }
+    </style>     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>        
+        $(document).ready(function() {
+            $("h3").click(function() 
+            { 
+                $("div").toggle(); 
+            });
+            $("#fadetoggle").click(function() 
+            { 
+                $(".div1, .div2, .div3").fadeToggle("slow");
+             });
+                $("#flip").click(function() 
+            {
+                 $("#panel").slideToggle("slow"); 
+            });
+                 $("#ani").click(function() 
+            {
+                $(".images").animate({
+                    height: '250px',
+                    width: '450px'
+                });
+            });
+                $("#fadeTo").click(function() 
+            { 
+                $(".div1").fadeTo("slow", 0.5); 
+            });
+        });
+       
+
+    </script>
+</head> 
+<body>     
+    <hr>      
+    <h3 class="text-center">THE COUNTRY OF CHERRY BLOSSOMS - JAPAN</h3>          
+    <br>      
+    <div class="row">
+        <div class="col-sm-4 div1">             
+            <button type="button" id="fadeTo" class="btn btn-dark">FADE TO</button>             
+            <br><br>            
+            <img src="japan1.jpg" width="600" height="700" class="center">  
+        </div> 
+
+        <div class="col-sm-4 div2">             
+            <button type="button" id="ani" class="btn btn-dark">ANIMATE</button>             
+            <br><br> 
+            <img src="japan2.jpg" width="600" height="300" class="center images"> 
+            <br><br>
+            <img src="japan3.jpg" width="600" height="300" class="center images"> 
+        </div> 
+
+        <div class="col-sm-4 div3">          
+            <button type="button" id="flip" class="btn btn-dark">SLIDE</button>             
+            <br><br>     
+            <img id="panel" src="japan4.jpg" width="600" height="700" class="center">     
+        </div> 
+    </div> 
+    <br>
+    <div class="text-center">    
+        <button type="button" id="fadetoggle" class="btn btn-dark">FADE TOGGLE</button>  
+    </div> 
+</body> 
+</html>
