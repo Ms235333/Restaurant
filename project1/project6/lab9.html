@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" language="javascript">
+        var cat=['Espresso'];
+        function function_fctn()
+        {
+            var rows=2;
+            var cols=1;
+            var table="";
+            for(var r=0; r<cat.length;r++)
+        {
+            table+='<tr>';
+                for(var c=0;c<cols;c++)
+            {
+                table+='<td>'+cat[r]+'</td>';
+            }
+            table+='</tr>';
+        }
+       
+        document.getElementById("cat_tab").innerHTML='<table border="2" class="table_hover justify_content_center table_striped table_bordered">'+table+'</table>';
+        } 
+        function function_push() 
+        {
+            var s=document.getElementById("_cate").value;
+            cat.push(s);
+            function_fctn();
+        }
+        function function_pop()
+        {
+            cat.pop();
+            function_fctn();
+        }
+        function function_sort()
+        {
+            cat.sort();
+            function_fctn();
+        }     
+        </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT ARRAY METHODS</title>
+    <style>
+        .background
+        {
+            background: url('1.png')no-repeat center center fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: fixed;
+            filter: blur(4px);
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+            z-index: -1;
+            
+        }
+        body{
+            /* background: url('1.png')no-repeat center center fixed;
+            background-repeat: no-repeat;
+            background-size: cover; */
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 45px;
+            color:rgb(15, 179, 211);
+            font-style:normal;
+            font-weight: bolder;
+            text-align: center;
+            /* opacity: 0.89; */
+            /* z-index: -5;
+            filter: blur(20px);
+            position:relative; */
+        }
+        /* body::before
+        {
+            content:"";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.89;
+            z-index: -5;
+        } */
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body onload="function_fctn()">
+    <div class="background"></div>
+    <div class="container-fluid gradient" id="top">
+        <br>
+        <h2 class="text-center"><strong> CAFE MENU SELECTION</strong></h2>
+        <hr>
+        <ul class="container text-center" style="list-style-type:none;">
+            <li>Espresso............$3</li>
+            <li>Mocha.............$4</li>
+            <li>Flat White............$2</li>
+            <li>Cappucino.............$3</li>
+            <li>Americano............$3</li>
+            <li>Short Black..........$3</li>
+            <li>Long Black.........$3</li>
+            <li>Lattle.........$4</li>
+            <li>Cocoa..........$4</li>
+            <li>Milk Tea.........$2</li>
+            <li>White Tea............$2</li>
+            <li>Green Tea.............$3</li>
+            <li>Black Tea.........$3</li>
+            <li>Oolong Tea........$4</li>
+            <li>Matcha Tea.............$4</li>
+        </ul>
+        <hr>
+    </div>
+    <div class="row justify-content-center">
+        <form class="form-inline">
+            <label for="_cate">Enter Items:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="_cate" placeholder="Enter Item from Menu" name="item">
+        </form>
+    </div>
+    <br>
+    <div class="container text-center">
+        <button type="submit" class="btn btn-outline-light" onclick="function_push()" id="_push">Add Item</button>
+        <button type="submit" class="btn btn-outline-light" onclick="function_pop()" id="_pop">Remove Item</button>
+        <button type="submit" class="btn btn-outline-light" onclick="function_sort()" id="_sort">Sort Item</button>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+        <div class="col-lg-1 justify-content-center">
+            <h4 class="text-center" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Your Order:</h4>
+            <div id="cat_tab" class="justify-content-center"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" language="javascript">
+var cat=['Cream'];
+function function_fctn()
+{
+var rows=2;
+var cols=1;
+var table="";
+for(var r=0; r<cat.length; r++)
+{
+table+='<tr>';
+for(var c=0; c<cols; c++)
+{
+table+='<td>'+cat[r]+'</td>';
+}
+table+='</tr>';
+}
+document.getElementById("cat-tab").innerHTML='<table border="2" class="table-hover justify-content table-striped table-bordered">'+table+'</table>';
+}
+function function_push()
+{
+var s=document.getElementById("_cate").value;
+cat.push(s);
+function_fctn();
+}
+function function_pop()
+{
+cat.pop();
+function_fctn();
+}
+function function_sort()
+{
+cat.sort();
+function_fctn();
+}
+</script>
+<meta name="viewport" content="width=device-width, nitial-scale=1.0">
+<title>JAVASCRIPT ARRAY METHODS</title>
+<style>
+.background {
+            background-image: url('makeup.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index:-1;
+            filter: blur(6px);
+        }
+        body {
+            font-family: 'Times New Roman', serif;
+            color:white;
+            background-color: rgb(13, 17, 17);
+            font-size: 40px;
+            font-weight: bolder;
+            text-align: center;          
+            margin: 12; 
+        }
+table
+{
+margin-left: auto;
+margin-right: auto;
+}
+.text-center
+{
+    margin: 12px;
+    padding: 24px;
+}
+
+h2
+{
+color:black;
+font-size:60px;
+background-color: rgb(137, 232, 189);
+}
+h4{
+    font-size:100px; 
+}
+button
+{
+font-size:50px;
+}
+input
+{
+font-size:30px;
+}
+label{
+    font-size: 40px;
+}
+</style>
+</head>
+<body onload="function_fctn()">
+    <div class="background" ></div>
+<div class="container-fluid gradient" id="top">
+<br>
+<h2 class="text-center" style="background-color: aquamarine; "><strong>MAKEUP PRODUCTS</strong></h2>
+<hr>
+<ul class="container text-center" style="list-style-type: none; ">
+<li>Face Primer..............................$3</li>
+<li>Liquid Foundation..............$4</li>
+<li>Concealer....................$2</li>
+<li>Setting Powder................$3</li>
+<li>Blush.........................$3</li>
+<li>Contour.......................$3</li>
+<li>Highlighter...................$3</li>
+<li>Eyeshadow Palette............$3</li>
+<li>Eyeliner......................$4</li>
+<li>Kajal.........................$2</li>
+<li>Eyebrow Pencil................$3</li>
+<li>Mascara......................$2</li>
+<li>Lipstick......................$4</li>
+<li>Setting Spray.................$3</li>
+<li>Makeup Tools..................$2</li>
+</ul>
+<hr>
+</div>
+<div class="row justify-content-center">
+<form  class="form-inline">
+<label for="_cate">Enter Items:</label>&nbsp; &nbsp;&nbsp;&nbsp;
+<input type="text" id="_cate" placeholder="Enter Item from Menu" name="item">
+</form>
+</div>
+<div class="container text-center">
+<button type="submit" class="btn btn-outline-light"style="margin:23px;"onclick="function_push()" id="_push"> Add Item</button>
+<button type="submit" class="btn btn-outline-light"style="margin:23px;"onclick="function_pop()" id="_pop">Remove Item</button>
+<button type="submit" class="btn btn-outline-light"style="margin:23px;"onclick="function_sort()" id="_sort">Sort Item</button>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-1 justify-content-center">
+<h4 class="text-center" style="font-family: verdana,Genrva,Tahona;">Your Order:</h4>
+<div id="cat-tab" class="justify-content-center">
+</div>
+</dpiv>
+</div>
+</body>
+</html>

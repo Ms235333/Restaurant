@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>REGISTRATION FORM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function registration()
+        {
+            var name=document.getElementById("t1").value;
+            var email=document.getElementById("t2").value;
+            var uname=document.getElementById("t3").value;
+            var pwd=document.getElementById("t4").value;
+            var cpwd=document.getElementById("t5").value;
+            var pwd_expression = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{6,12}$/;
+        var letters = /^[A-Za-z\s]+$/;
+        var filter = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (name=='')
+        {
+            alert('Please enter your name');
+        }
+        else  if(!letters.test(name))
+        {
+            alert('Name field requires only alphabet characters');
+        }
+            else  if(email=='')
+        {
+            alert('Please enter your email id');
+        }
+            else  if(!filter.test(email))
+        {
+            alert('Invalid email');
+        }
+              else  if(uname=='')
+        {
+            alert('Please enter a user name');
+        }
+              else  if(!letters.test(uname))
+        {
+            alert('User name field requires only alphabet characters');
+        }
+            else if(pwd=='')
+        {
+            alert('Please enter password');
+        }
+        else if(document.getElementById("t4").value.length<6)
+        {
+        alert('Minimum length of password is 6 characters');
+        }
+        else if(document.getElementById("t4").value.length>12)
+        {
+        alert('Maximum length of password is 12 characters');
+        }
+        else if(!pwd_expression.test(pwd))
+    {
+        alert('Upper case,Lower case,Special Character,numeric,and letters are required in password field');
+    }
+        else if(cpwd=='')
+        {
+            alert('Please confirm password');
+        }
+    else if(pwd!==cpwd)
+    {
+    alert('Passwpords donot match');
+    }
+        else
+        {
+        alert('Thank You for creating an account with us! You will now be redirected to google');
+        window.location="https://www.google.com/";
+        }
+    }
+        function clearFunc()
+        {
+        document.getElementById("t1").value="";
+        document.getElementById("t2").value="";
+        document.getElementById("t3").value="";
+        document.getElementById("t4").value="";
+        document.getElementById("t5").value="";
+        }
+    </script>
+    <style>
+        h2{
+            text-align: center;
+        }
+        .margin
+        {
+        margin:auto;
+        }
+        .p
+        {
+        padding-top:240px;
+    }
+        body
+        {
+        background-color:white;
+        font-family:Impact,Haettenschweiler,'Arial Narrow Bold', sans-serif;
+        font-size:50px;
+        }
+        input{
+            font-style:normal;
+            font-weight: 800;
+            font-size: larger;
+        }
+        </style>
+</head>
+<body>
+    <div id="main" class="text-uppercase">
+        <br>
+        <h2 class="p text-center">Create Your Account</h2>
+        <br>
+    </div>
+    <div class="login">
+        <table border="0" cellspacing="2" cellpadding="8" class="margin text-left">
+            <tr>
+                <td>Enter Name:</td>
+                <td><input type="text" placeholder="Enter Your Name" id="t1" class="tb"></td>
+            </tr>
+            <tr>
+                <td>Enter Email ID:</td>
+                <td><input type="text" placeholder="Enter Your Email id" id="t2" class="tb"></td>
+            </tr>
+            <tr>
+                <td>Enter UserName:</td>
+                <td><input type="text" placeholder="Enter Your UserName" id="t3" class="tb"></td>
+            </tr>
+            <tr>
+                <td>Enter Password:</td>
+                <td><input type="password" placeholder="Enter You password" id="t4" class="tb"></td>
+            </tr>
+            <tr>
+                <td>Enter Confirm Password:</td>
+                <td><input type="password" placeholder="Re-enter Your password" id="t5" class="tb"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style=" padding-left:200px;">
+                    <input type="reset" value="RESET" onclick="clearFunc()" id="res" class="btn btn-dark"/>
+                    <input type="button" value="CREATE" class="btn btn-dark" onclick="registration()"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </body>
+</html>
